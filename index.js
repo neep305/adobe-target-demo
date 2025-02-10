@@ -16,10 +16,12 @@ const CONFIG = {
     events: {
         clientReady: () => {
             console.log('clientReady');
+            startApp();
         },
         onBeforeRequest: (request) => {
             console.log('onBeforeRequest', request);
         },
+
         onAfterResponse: (response) => {
             console.log('onAfterResponse', response);
         },
@@ -83,9 +85,15 @@ const onArtifactDownloadFailed = (event) => {
     console.log(`The local decisioning artificat failed to download from ${event.artifictLocation} with the following error: ${event.error.message}`);
 }
 
+// startApp
+const startApp = () => {
+    console.log('startApp');
+}
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
 
 
 
